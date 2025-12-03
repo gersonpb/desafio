@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: desafio
+  h2:
+    console:
+      enabled: true  # Enables the H2 console
+      path: /h2-console # Sets the path for the H2 console (e.g., http://localhost:8080/h2-console)
+  datasource:
+    url: jdbc:h2:mem:testdb; # H2 in-memory database URL. DB_CLOSE_DELAY=-1 keeps the DB alive as long as the JVM is running.
+    driver-class-name: org.h2.Driver # Specifies the H2 driver class
+    username: sa # Username for the H2 database
+    password: # Password for the H2 database (can be left empty for H2)
+  jpa:
+    hibernate:
+      ddl-auto: update # Controls Hibernate's schema generation (e.g., create, update, create-drop, none)
+    show-sql: true # Enables logging of SQL statements
+    database-platform: org.hibernate.dialect.H2Dialect # Specifies the H2 dialect for Hibernate
